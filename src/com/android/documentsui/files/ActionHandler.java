@@ -502,10 +502,10 @@ public class ActionHandler<T extends FragmentActivity & AbstractActionHandler.Co
             return false;
         }
 
-        mState.stack.reset(stack);
-        if (mState.stack.isEmpty()) {
-            mActivity.onRootPicked(mState.stack.getRoot());
+        if (stack.isEmpty()) {
+            mActivity.onRootPicked(stack.getRoot());
         } else {
+            mState.stack.reset(stack);
             mActivity.refreshCurrentRootAndDirectory(AnimationView.ANIM_NONE);
         }
 
